@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>GifTastic</title>
+
+    <!-- CSS Reset Sheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+
+    <!-- Our own CSS Sheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Linking bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Buttons will get dumped here -->
+            <div id="buttons-view"></div><br>
+
+            <!-- Topics will get dumped here -->
+            <div id="topics-view"></div>
+
+
+            <!-- This form will be where users input data about the movies -->
+            <form id="topic-form">
+                <!-- <label for="topic-input">You pick</label><br> -->
+                <input type="text" id="topic-input">
+
+                <!-- This button will trigger our AJAX call -->
+                <input id="find-topic" type="submit" value="Topic Search">
+            </form>
+            <!-- We'll be dumping our JSON contents in here -->
+            <div id="topic-view"></div>
+
+        </div>
+        <div class="row"></div>
+        <!-- Gifs will get dumped here -->
+        <div id="gifs-appear-here"></div>
+    </div>
+    </div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+
+</body>
+
+</html>

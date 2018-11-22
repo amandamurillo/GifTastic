@@ -1,0 +1,13 @@
+
+body {
+    /* Typography */
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  
+    /* Visual */
+    background: hotpink;
+}
+
+.topic{
+    background-color: aquamarine;
+    color: red;
+}
