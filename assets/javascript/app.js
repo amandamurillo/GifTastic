@@ -1,4 +1,4 @@
-var topicArr = ["laughing", "crying", "happy", "regrets"]
+var topicArr = ["eye roll", "tired", "puppies", "tarantula", "dance"]
 
 function makeButton() {
     // .empty deletes movie buttons prior to adding new ones
@@ -23,12 +23,11 @@ makeButton();
 // Event listener for all button elements
 $(document).on("click", ".topic", function () {
     // create a variable equal to "data-name" attribute made for each button
-    // why does it have to be single ticks
     var name = $(this).attr("data-name")
     // Constructing a URL to search Giphy for the name of the topic, limit 10
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=8dKQm41P7RUDgOLf1bZTOnlnXksEgtdJ&limit=10";
 
-    // Performing our AJAX GET request
+    // AJAX GET request
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -40,17 +39,16 @@ $(document).on("click", ".topic", function () {
             var results = response.data;
 
             // Looping over every result item
-            for (var i = 0; i < results.length; i++) {
-                // results.forEach(function(i){
-                // 
-                // })
+            // for (var i = 0; i < results.length; i++) {
+                results.forEach(function(i){
+                
 
                 // Creating a div for the gif
-                var gif = results[i];
+                var gif = i;
                 var gifDiv = $("<div>");
 
                 // Storing the result item's rating
-                var rating = results[i].rating;
+                var rating = i.rating;
 
                 // Creating a paragraph tag with the result item's rating
                 var p = $("<p>").text("Rating: " + rating);
@@ -73,7 +71,7 @@ $(document).on("click", ".topic", function () {
 
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                 $("#gifs-appear-here").prepend(gifDiv);
-            }
+            });
         });
     });
 
